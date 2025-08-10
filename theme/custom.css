@@ -1,0 +1,182 @@
+figure {
+    margin: 1.5em 0;
+    padding: 0.5em;
+    display: inline-block;
+    width: 100%;
+    border: 2px solid var(--header-background-color);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-size: 1em;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    background-color: var(--header-background-color);
+    border-radius: 7px;
+    color: var(--content-background-color);
+}
+
+figcaption::before {
+    content: "Légende : ";
+    font-weight: bold;
+    color: var(--header-accent-color);
+}
+.copy-block {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.2em 0.4em;
+  font-family: monospace;
+  position: relative;
+  margin: 0; /* important */
+  transition: background-color 0.2s;
+}
+
+
+.copy-block:hover {
+  background-color: #e2e8f0;
+}
+.copy-block {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 0.2em 0.4em;
+  font-family: monospace;
+  position: relative;
+  margin: 0; /* important */
+  transition: background-color 0.2s;
+}
+.copy-block code {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95em;
+}
+
+.copy-feedback {
+  display: none;
+  font-size: 0.85em;
+  color: #22c55e;
+  margin-left: 0.4em;
+  position: static;
+  padding-top: 0;
+}
+
+.copy-feedback.visible {
+  display: inline;
+}
+.cartes-anki-button {
+  background-color: #93C5FD; /* background color */
+  color: #2C2C2C; /* text color */
+  border: none; /* remove default border */
+  padding: 2px 4px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin: 2px;
+  line-height: 1.2;
+}
+
+.notes-anki-button {
+  background-color: #4ADE80; /* background color */
+  color: #2C2C2C; /* text color */
+  border: none; /* remove default border */
+  padding: 2px 4px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin: 2px;
+  line-height: 1.2;
+}
+
+.flag-anki-button {
+  background-color: #2C2C2C;
+  border-radius: 3px;
+  padding: 3px;
+  margin: 2px;
+  line-height: 1.7;
+}
+
+.ressource-picked {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+  display: table;
+  border: 2px solid var(--header-background-color);
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ressource-picked img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.ressource-picked-caption {
+  font-size: 1em;
+  text-align: left;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  background-color: var(--header-background-color);
+  border-radius: 7px;
+  color: var(--content-background-color);
+}
+
+.ressource-picked-caption::before {
+  content: "Mon choix #1 : ";
+  font-weight: bold;
+  color: var(--header-accent-color);
+}
+
+.rounded-anki-adventure img {
+  border-radius: 7px;
+}
+
+.rounded-grid-anki-adventure img {
+  border-radius: 7px;
+  margin-top: 0.5em;
+}
+
+.grid-2-2-anki-adventure {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.grid-1-2-anki-adventure {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
+.sauvegarde-anki-button {
+  background-color: #2e64df; /* background color */
+  color: #ffffff; /* text color */
+  border: none; /* remove default border */
+  padding: 2px 4px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin: 2px;
+  line-height: 1.2;
+}
+/*# sourceMappingURL=styles.css.map */

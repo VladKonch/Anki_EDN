@@ -1,0 +1,12 @@
+[book]
+authors = ["Angelo Marciszewer"]  
+language = "fr"
+src = "src"
+title = "Anki EDN"
+[output.html]
+additional-css = ["theme/custom.css"]
+additional-js = ["theme/custom.js"]
+site-url = "/Anki_EDN/"
+default-theme = "Rust"
+preferred-dark-theme = "Ayu"
+smart-punctuation = true
