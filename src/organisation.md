@@ -3,45 +3,49 @@
 
 Les cartes sont classées via des étiquettes :
 
-- des étiquettes par items, parfois avec des sous-tags ;
+- des étiquettes par items, parfois avec des sous‑tags ;
 - des étiquettes par matière ;
 - des étiquettes par rang ;
-- et un certain nombre d'étiquettes pour faciliter les recherches (`Antibiothérapie`,  `Formule`, `Norme`, `Seuil`, `Nom-propre` entre autres...).
+- et un certain nombre d'étiquettes pour faciliter les recherches (`Antibiothérapie`, `Formule`, `Norme`, `Seuil`, `Nom-propre`, entre autres).
 
 <figure>
-    <img src="./images/tags_ilu.png" alt="Sorry the link is broken..."/>
+    <img src="./images/tags_ilu.png" alt="Média en cours de création..."/>
 </figure>
 
 ## Les drapeaux 🏴
+> C'est à vous de les placer afin d'optimiser vos révisions
 
-Comment peuvent s'utiliser les drapeaux  :
+Pour marquer vos cartes durant vos révisions, allez dans `Autres choix` > `Marqueur de carte` ou simplement <kbd>Ctrl</kbd>+<kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd> ou <kbd>4</kbd>.
 
-- <span style="color: #86EFAC;" class="flag-anki-button">Vert</span> pour les cartes importantes ;
-- <span style="color: #FDBA74;" class="flag-anki-button">Orange</span> pour les cartes que vous considérez comme difficile ;
+Voici comment peuvent s'utiliser les drapeaux :
+
 - <span style="color: #F87171;" class="flag-anki-button">Rouge</span> pour les cartes qui doivent être modifiées ;
+- <span style="color: #FDBA74;" class="flag-anki-button">Orange</span> pour les cartes que vous considérez comme difficiles ;
+- <span style="color: #86EFAC;" class="flag-anki-button">Vert</span> pour les cartes importantes ;
 - <span style="color: #60A5FA;" class="flag-anki-button">Bleu</span> pour les cartes qui peuvent être améliorées (avec une illustration par exemple).
 
 ## Les paquets
 
-**Il y a un seul paquet 2e-cycle.** 
-Car : 
-- une carte peut être en rapport avec 2 items ;
+**Il y a un seul paquet 2e cycle.**
+Car :
+- une carte peut être en rapport avec deux items ;
 - une carte ne peut être que dans un paquet à la fois ;
 - une carte peut avoir plusieurs étiquettes.
 
-Ainsi, nous **utilisons des étiquettes pour classer ses cartes**. Le paquet est là pour **rassembler les cartes que l'on souhaite réviser**. Compte tenu des exigences de l'EDN, toutes les cartes que l'on souhaite apprendre sont à réviser de la même façon[^approximation-rang] : il n'y a donc qu'un seul paquet.
+Nous **utilisons donc des étiquettes pour classer vos cartes** et le paquet sert uniquement à **rassembler les cartes à réviser**. Compte tenu des exigences de l'EDN, toutes les cartes sont à réviser de la même façon[^approximation-rang].
 
-<!-- Insérer lien vers section -->
-[^approximation-rang]: Le paquet se voulant exhaustif, il comprend à la fois des
-    connaissances rentables à bien connaitre et d'autres, plus anecdotiques. Vous pouvez exclure les cartes que vous jugez non rentables.
+[^approximation-rang]: Le paquet, se voulant exhaustif, comprend à la fois des connaissances rentables à bien connaître et d'autres, plus anecdotiques. Vous pouvez exclure les cartes que vous jugez non rentables.
 
+## Bien réviser
+### Révisions des cartes
+- **Difficile** : Usage exceptionnel (réponse juste après un long doute).
+- **À revoir** : Si oubli partiel. Les intervalles sont gérés par l'algo, ne trichez pas ! Si une carte gêne, suspendez-la.
+- **Facile** : Uniquement pour les évidences.
 
+<figure>
+    <img src="./images/illu_facile__difficile.png" alt="Choix de réponse Anki"/>
+</figure>
 
-## Bien réviser (illustrer):
-
-- Utilisez `Difficile` de façon exceptionnelle (uniquement quand vous avez une réponse juste après un long doute) autrement vous risquez de  **ruiner** votre apprentissage :  
-Si une carte est partiellement oubliée, il faut cliquer sur `à revoir`.             
-  - L'algorithme personnalise les intervalles de révision. Il ne faut pas tricher sur les durées au bénéfice au court terme : vous vous saboterez au long terme. Si cette carte est une plaie, suspendez-la.  
-- De la même façon, utilisez `Facile` uniquement pour les évidences
-- Sur la page d'acceuil, Vous pouvez vous rendre à droite du paquet dans `⚙️> options > FSRS` et cliquer sur `Optimiser`une fois par mois.
-- Essayez de faire vos révisions journalières d'une traite.
+### Autres
+- **FSRS** : Optimisez-le une fois par mois (`⚙️ > options > FSRS > Optimiser`). <span class="gif-wrapper" data-video="videos/test.webm" data-video-fallback="videos/test.mp4"></span> 
+- Faites vos révisions journalières d'une traite si possible.

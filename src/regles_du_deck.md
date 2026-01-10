@@ -1,5 +1,5 @@
-# Les normes du deck
-Ce chapitre explique le format des cartes utilisées et les modes de rédactions des différentes notes. Pour participer à l'évolution de ce paquet, il faut respecter le mode rédactionnel et intégrer sa logique.
+# Les normes du paquet
+Ce chapitre explique le format des cartes utilisées et les modes de rédactions des différentes cartes. Pour participer à l'évolution de ce paquet, il faut respecter le mode rédactionnel et intégrer sa logique.
 
 ## Flashcards
 
@@ -62,25 +62,10 @@ Il y a 5 types de notes principaux :
 </figure>
 
 ## Champs
-Ils sont en partie présentés dans la carte *beta*.
-- **Infos supplémentaires**, pour des illustrations ou des infos importantes
-  (dont l'affichage bug sur mobile) ;
-- **Cartes Liées** (cf. [supra](#flashcards)) ;
-- **Mnemonics**, pour des moyens mnémotechniques ;
-- **Comments**, pour des commentaires divers et variés ;
-- **Source**, pour indiquer la source (principalement en cas de discordances
-  entre référentiels) ;
-- **Erreurs faites**, pour noter les erreurs en QCM ou en stage ;
-- **Mots clés**, pour faciliter les recherches dans l'explorateur (par exemple
-  mettre SAPL sur une carte où il y a écrit Syndrome des anti phospholipides).
-  Ce champ n'apparait pas sur le verso des cartes ;
-- **Références** 
-
-
-Certains éléments qui devraient être dans un champ sont parfois dans un autre :
-par exemple certains des mots-clés sont en réalité dans le champ Comments,
-notamment quand il s'agit de la forme développée d'un acronyme que l'on souhaite
-avoir sous les yeux pendant les révisions.
+Certains champs sont auto-explicatifs. Focus sur :
+- **Infos supplémentaires** : Illustrations ou infos majeures (bug d'affichage mobile possible).
+- **Cartes Liées** : Voir [supra](#flashcards).
+- **Mots clés** : Pour la recherche (ex: "SAPL" pour "Syndrome des anti phospholipides"). Parfois placés dans `Comments`.
 
 
 ### Affichage des cartes difficiles

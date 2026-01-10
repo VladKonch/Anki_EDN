@@ -1,182 +1,564 @@
-figure {
+/* ===============================
+   MÉDIAS UNIFIÉS (images, vidéos, PDFs, gifs dynamiques)
+   =============================== */
+/* ===============================
+   MÉDIAS UNIFIÉS (séparation figure / img / embed)
+   =============================== */
+
+/* --- Figure générique (bloc multimédia avec cadre) --- */
+figure,
+.embed-figure,
+.gif-wrapper+.embed-figure,
+.embed-container {
+    display: block;
     margin: 1.5em 0;
     padding: 0.5em;
-    display: inline-block;
-    width: 100%;
     border: 2px solid var(--header-background-color);
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--content-background-color, transparent);
+    width: 100%;
 }
 
-figure img {
-    max-width: 100%;
+/* --- Images SEULES (hors figure) → cadre --- */
+img:not(figure img) {
+    width: 100%;
     height: auto;
-}
-
-figcaption {
-    font-size: 1em;
-    margin-top: 0.5em;
-    padding: 0.5em;
-    background-color: var(--header-background-color);
+    display: block;
     border-radius: 7px;
-    color: var(--content-background-color);
+    border: 2px solid var(--header-background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    background-color: var(--content-background-color, transparent);
 }
 
-figcaption::before {
-    content: "Légende : ";
-    font-weight: bold;
-    color: var(--header-accent-color);
-}
-.copy-block {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  background-color: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  padding: 0.2em 0.4em;
-  font-family: monospace;
-  position: relative;
-  margin: 0; /* important */
-  transition: background-color 0.2s;
+/* --- Images DANS une figure → pas de double bordure --- */
+figure img,
+.embed-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 7px;
+    border: none;
+    /* pas de cadre, le figure s'en charge */
+    box-shadow: none;
+    /* pas d’ombre, héritée du figure */
+    background: transparent;
 }
 
-
-.copy-block:hover {
-  background-color: #e2e8f0;
-}
-.copy-block {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  background-color: #f1f5f9;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  padding: 0.2em 0.4em;
-  font-family: monospace;
-  position: relative;
-  margin: 0; /* important */
-  transition: background-color 0.2s;
-}
-.copy-block code {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  font-size: 0.95em;
+/* --- Vidéos animées dans figure --- */
+.embed-figure video.video-anim {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 7px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
 }
 
-.copy-feedback {
-  display: none;
-  font-size: 0.85em;
-  color: #22c55e;
-  margin-left: 0.4em;
-  position: static;
-  padding-top: 0;
+/* --- Iframes dans container --- */
+.embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* pas de bordure interne */
+    border-radius: 7px;
+    background: transparent;
 }
 
-.copy-feedback.visible {
-  display: inline;
+/* --- Figcaption (pour tous les médias) --- */
+figure figcaption,
+.embed-figure figcaption,
+.gif-wrapper+.embed-figure figcaption,
+.embed-container figcaption {
+    font-size: 0.85em;
+    margin-top: 0.3em;
+    padding: 0.3em 0.5em;
+    background-color: var(--header-background-color) !important;
+    color: var(--content-background-color) !important;
+    border-radius: 7px;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.3;
+    font-style: italic;
 }
+
+/* --- Container responsive pour iframe/tableaux/PDF --- */
+.embed-container {
+    position: relative;
+    padding-bottom: 65%;
+    height: 0;
+    overflow: hidden;
+}
+
+/* ===============================
+   ANKI
+   =============================== */
 .cartes-anki-button {
-  background-color: #93C5FD; /* background color */
-  color: #2C2C2C; /* text color */
-  border: none; /* remove default border */
-  padding: 2px 4px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  display: inline-block;
-  margin: 2px;
-  line-height: 1.2;
+    background-color: #93C5FD;
+    color: #2C2C2C;
+    border: none;
+    padding: 2px 4px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin: 2px;
+    line-height: 1.2;
 }
 
 .notes-anki-button {
-  background-color: #4ADE80; /* background color */
-  color: #2C2C2C; /* text color */
-  border: none; /* remove default border */
-  padding: 2px 4px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  display: inline-block;
-  margin: 2px;
-  line-height: 1.2;
+    background-color: #4ADE80;
+    color: #2C2C2C;
+    border: none;
+    padding: 2px 4px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin: 2px;
+    line-height: 1.2;
 }
 
 .flag-anki-button {
-  background-color: #2C2C2C;
-  border-radius: 3px;
-  padding: 3px;
-  margin: 2px;
-  line-height: 1.7;
+    background-color: #2C2C2C;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 2px;
+    line-height: 1.7;
 }
 
-.ressource-picked {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5em;
-  padding: 0.5em;
-  display: table;
-  border: 2px solid var(--header-background-color);
-  border-radius: 10px 10px 10px 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.ressource-picked img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-  max-width: 100%;
-  max-height: 300px;
-}
-
-.ressource-picked-caption {
-  font-size: 1em;
-  text-align: left;
-  margin-top: 0.5em;
-  padding: 0.5em;
-  background-color: var(--header-background-color);
-  border-radius: 7px;
-  color: var(--content-background-color);
-}
-
-.ressource-picked-caption::before {
-  content: "Mon choix #1 : ";
-  font-weight: bold;
-  color: var(--header-accent-color);
-}
-
-.rounded-anki-adventure img {
-  border-radius: 7px;
-}
-
-.rounded-grid-anki-adventure img {
-  border-radius: 7px;
-  margin-top: 0.5em;
-}
-
-.grid-2-2-anki-adventure {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.grid-1-2-anki-adventure {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  gap: 10px;
-}
 .sauvegarde-anki-button {
-  background-color: #2e64df; /* background color */
-  color: #ffffff; /* text color */
-  border: none; /* remove default border */
-  padding: 2px 4px;
-  border-radius: 4px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  display: inline-block;
-  margin: 2px;
-  line-height: 1.2;
+    background-color: #2e64df;
+    color: #ffffff;
+    border: none;
+    padding: 2px 4px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin: 2px;
+    line-height: 1.2;
 }
-/*# sourceMappingURL=styles.css.map */
+
+/* ===============================
+   TAB BAR
+   =============================== */
+.tab-bar {
+    display: flex;
+    border-bottom: 1px solid #555;
+    background: #353535;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.tab-button {
+    display: inline-block;
+    padding: 6px 14px;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #eee;
+    background: #353535;
+    border: 1px solid #343232;
+    border-bottom: none;
+    border-radius: 0 0 6px 6px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.tab-button:hover {
+    background: #454545;
+}
+
+.tab-button.active {
+    background: #555;
+    color: #ffffff;
+}
+
+/* ===============================
+   COPY BLOCK
+   =============================== */
+.copy-block {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 0.2em 0.4em;
+    font-family: monospace;
+    position: relative;
+    margin: 0;
+    transition: background-color 0.2s;
+}
+
+.copy-block:hover {
+    background-color: #e2e8f0;
+}
+
+.copy-block code {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95em;
+}
+
+.copy-feedback {
+    opacity: 0;
+    transform: translateY(5px);
+    pointer-events: none;
+    font-size: 0.85em;
+    color: #22c55e;
+    background-color: #f9fafb;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 2px 6px;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.4em);
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 5;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.copy-feedback.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Petite taille spécifique pour un seul bloc de copie */
+.copy-block.tiny-copy {
+    font-size: 0.6rem;
+    /* encore un peu plus petit */
+    line-height: 1.1;
+    vertical-align: baseline;
+}
+
+/* Bloc de copie qui se déplie au clic */
+.copy-block.collapse-copy {
+    display: block;
+    margin: 0.8em 0;
+    max-height: 1.4em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: max-height 0.25s ease-in-out, background-color 0.2s;
+    padding-right: 2em;
+    /* laisse de la place pour les ... éventuels */
+}
+
+.copy-block.collapse-copy.expanded {
+    max-height: 1000px;
+    white-space: pre-wrap;
+    background-color: #f8fafc;
+}
+
+.copy-block.collapse-copy code {
+    display: block;
+    width: 100%;
+}
+
+.copy-block.collapse-copy .copy-feedback {
+    top: 5px;
+    right: 5px;
+    left: auto;
+}
+
+/* ===============================
+   FOOTER ET LOGOS
+   =============================== */
+footer {
+    margin-top: 2em;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    border-top: 1px solid #ddd;
+}
+
+.site-footer {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted-color, #666);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 8px;
+    vertical-align: middle;
+    transition: color 0.2s;
+}
+
+.social-logo {
+    height: 28px;
+    vertical-align: middle;
+}
+
+/* ===============================
+   ICONES / BOUTONS GÉNÉRIQUES
+   =============================== */
+.icon-btn {
+    --_size: 32px;
+    inline-size: var(--_size);
+    block-size: var(--_size);
+    display: inline-grid;
+    place-items: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 999px;
+    outline-offset: 3px;
+    transition: transform .12s ease, color .12s ease;
+    color: var(--header-background-color);
+}
+
+.icon-btn:hover {
+    transform: translateY(-1px);
+    color: var(--header-accent-color);
+}
+
+.icon {
+    inline-size: 70%;
+    block-size: 70%;
+    color: inherit;
+}
+
+/* ===============================
+   BOUTON GIF (vidéo animée)
+   =============================== */
+.gif-wrapper {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.1em;
+}
+
+.gif-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    background: transparent;
+    color: #2563eb;
+    font-weight: 500;
+    border: 1px solid #2563eb;
+    border-radius: 6px;
+    padding: 0.15em 0.5em;
+    cursor: pointer;
+    font-size: 0.8em;
+    line-height: 1.2;
+    vertical-align: text-bottom;
+    transition: all 0.2s ease;
+}
+
+.gif-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.gif-btn .icon {
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+}
+
+/* ===============================
+   FALLBACK MÉDIAS
+   =============================== */
+.media-fallback {
+    display: block;
+    padding: 1em;
+    margin: 0.5em 0;
+    font-style: italic;
+    font-size: 0.95em;
+    color: #555;
+    background-color: #fafafa;
+    border: 2px dashed var(--header-background-color, #bbb);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ==== CAROUSEL ==== */
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    /* Adjust as needed */
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: var(--bg);
+    /* Use theme variable if available */
+}
+
+.carousel-slide {
+    display: none;
+    animation: fadeEffect 1s;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-slide figcaption {
+    text-align: center;
+    padding: 8px;
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.carousel-slide {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0.6;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===============================
+   IMAGE SIZING CLASSES
+   =============================== */
+.img-lg {
+    max-width: 100%;
+    /* Standard large image */
+}
+
+.img-md {
+    max-width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+.img-sm {
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* ===============================
+   LIGHTBOX
+   =============================== */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+    cursor: zoom-out;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    opacity: 0;
+    animation: zoomIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Helper to make images clickable */
+img.clickable-zoom {
+    cursor: zoom-in;
+    transition: transform 0.2s;
+}
+
+img.clickable-zoom:hover {
+    transform: scale(1.02);
+}
